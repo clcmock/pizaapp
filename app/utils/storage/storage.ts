@@ -57,6 +57,16 @@ export async function save(key: string, value: any): Promise<boolean> {
     return false
   }
 }
+export async function set(data): Promise<boolean> {
+  try {
+    const key = Object.keys(data)[0]
+    const value = Object.values(data)[0]
+    await AsyncStorage.setItem(key, JSON.stringify(value))
+    return true
+  } catch {
+    return false
+  }
+}
 
 /**
  * Removes something from storage.

@@ -9,6 +9,8 @@ install! 'cocoapods', :deterministic_uuids => false
 
 target 'HelloWorld' do
   use_expo_modules!
+  pod 'react-native-randombytes', :path => '../node_modules/react-native-randombytes'
+
   post_integrate do |installer|
     begin
       expo_patch_react_imports!(installer)
